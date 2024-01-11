@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidebar {
+      width: 20%;
+      height: 100vh;
+      background-color: #21215e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+    }
+
+    .sidebar-item {
+      width: 90%;
+      height: 30px;
+      margin: 5px 0;
+      display: flex;
+      font-size: 0.8em;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .sidebar-item:hover {
+      background-color: rgb(119, 119, 190);
+      cursor: pointer;
+    }
+
+    .sidebar-item i {
+      margin-right: 40px;
+    }
+
+    .user-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .visit-store {
+      font-size: 12px;
+      color: #ccc;
+      text-align: center;
+    }
+
+    .credits {
+      width: 100%;
+      height: 50px;
+      margin-top: auto;
+      background-color: #2c4785;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .main {
+        width: 80%;
+        height: 100vh;
+        overflow-y: auto;
+        margin-left: 100px;
+        flex-direction: row;
+    }
+
+    .main-header {
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .main-header input {
+        width: 200px;
+        height: 30px;
+        margin: 0 20px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        padding: 0 10px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    .main-header input:focus {
+        outline: none;
+        border-color: #999;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .main-content h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .summary-box {
+        width: 30%;
+        height: 100px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hell{
+        display: flex;
+        flex-direction: row;
+    }
+    .summary-box h2 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .summary-box p {
+        font-size: 12px;
+        color: #999;
+    }
+
+    .transactions-table {
+        width: 100%;
+        margin: 20px 0;
+        border-collapse: collapse;
+    }
+
+    .transactions-table th, .transactions-table td {
+        width: 20%;
+        height: 40px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .transactions-table tr:nth-child(even) {
+        background-color: #f0f0f0;
+    }
+
+    .transactions-table tr:hover {
+        background-color: #e0e0e0;
+    }
+
+    .status {
+        width: 80%;
+        height: 20px;
+        margin: 10px auto;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .processing {
+        background-color: #ffcc00;
+    }
+
+    .successful {
+        background-color: #66cc66;
+    }
+    .user-info {
+    display: flex;
+    align-items: center;
+    }   
+    .user-image {
+        max-width: 20%; 
+        display:block;
+        height: auto; 
+        margin-top: 15px;
+        margin-right: 5px;
+        border-radius: 10%;
+    }
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #f4f1ee;
+}
+
+nav ul {
+   list-style-type: none;
+}
+
+nav li {
+   display: inline;
+   margin-right: 20px; 
+}
+
+nav a {
+   color: rgb(21, 20, 20);
+   text-decoration: none;
+}
+
+.search-bar input[type=text] {
+   padding: 5px;
+   border-radius: 10px;
+   width: 200px;
+   border-color: #ccc;
+}
+.test{
+    border-radius: 10px;
+    border-color:#ddd;
+}
+.icons {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+   /* Style as per your requirement */
+}
+.icon1{
+    border-radius: 50%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-item">
+          <i class="fas fa-user-circle"></i>
+          <div class="user-info">
+            <img src="Image1.png" alt="User Image" class="user-image">
+            <div class="user-name">Nishyan</div>
+        </div>    
+        </div>
+        <div class="visit-store">Visit store</div>
+        <div class="sidebar-item"><i class="fas fa-home"></i>Home</div>
+        <div class="sidebar-item"><i class="fas fa-shopping-cart"></i>Orders</div>
+        <div class="sidebar-item"><i class="fas fa-box"></i>Products</div>
+        <div class="sidebar-item"><i class="fas fa-truck"></i>Delivery</div>
+        <div class="sidebar-item"><i class="fas fa-bullhorn"></i>Marketing</div>
+        <div class="sidebar-item"><i class="fas fa-chart-line"></i>Analytics</div>
+        <div class="sidebar-item"><i class="fas fa-money-check-alt"></i>Payouts</div>
+        <div class="sidebar-item"><i class="fas fa-percent"></i>Discounts</div>
+        <div class="sidebar-item"><i class="fas fa-users"></i>Audience</div>
+        <div class="sidebar-item"><i class="fas fa-paint-brush"></i>Appearance</div>
+        <div class="sidebar-item"><i class="fas fa-plug"></i>Plugins</div>
+        <div class="credits">Available credits: 222.10</div>
+      </div>
+    <div class="main">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#"><strong>Payouts</strong></a></li>
+                    <li><a href="#">How it works</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search features, tutorials, etc.">
+            </div>
+            <div class="icons">
+                <img src="Icon1.png" alt="User Image" class="icon1">
+                <img src="Icon2.png" alt="User Image" class="icon1">
+            </div>
+        </header>
+        
+    <div class="main-content">
+        <h1>Overview</h1>
+        <div class="summary-boxes hell">
+            <div class="summary-box">
+                <h2>Next Payout: ₹2,312.23</h2>
+                <p>23 orders</p>
+                <p>Next payout date Today, 04:00PM</p>
+            </div>
+            
+        <div class="summary-box">
+            <h2>Amount Pending: ₹92,312.20</h2>
+            <p>13 orders</p>
+        </div>
+        <div class="summary-box">
+            <h2>Amount Processed: ₹23,932,312.19</h2>
+        </div>
+        </div>
+        <br><br>
+        <h1>Transactions | This Month</h1>
+        <br>
+        <p>Payouts (22) &nbsp;&nbsp;&nbsp;&nbsp; Refunds (1)</p>
+        <br><br>
+        <input type="text" placeholder="" class="test">
+        <table class="transactions-table">
+        <tr>
+            <th>Order ID</th>
+            <th>Status</th>
+            <th>Transaction ID</th>
+            <th>Order amount</th>
+            <th>Transaction fees</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>#281209</td>
+            <td><div class="status processing">Processing</div></td>
+            <td>316346345747</td>
+            <td>₹1025.00</td>
+            <td>₹125.00</td>
+            <td>₹912</td>
+        </tr>
+        <tr>
+            <td>#281208</td>
+            <td><div class="status successful">Successful</div></td>
+            <td>316346345747</td>
+            <td>₹1025.00</td>
+            <td>₹125.00</td>
+            <td>₹912</td>
+        </tr>
+        <tr>
+            <td>#281207</td>
+            <td><div class="status successful">Successful</div></td>
+            <td>316346345747</td>
+            <td>₹1025.00</td>
+            <td>₹125.00</td>
+            <td>₹912</td>
+        </tr>
+        <tr>
+            <td>#281206</td>
+            <td><div class="status successful">Successful</div></td>
+            <td>316346345747</td>
+            <td>₹1025.00</td>
+            <td>₹125.00</td>
+            <td>₹912</td>
+        </tr>
+        <tr>
+            <td>#281205</td>
+            <td><div class="status successful">Successful</div></td>
+            <td>316346345747</td>
+            <td>₹1025.00</td>
+            <td>₹125.00</td>
+            <td>₹912</td>
+        </tr>
+        </table>
+    </div>
+    </div>
+</body>
+</html>
+        

@@ -1,38 +1,230 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar {
+width: 20%;
+height: 100vh;
+background-color: #21215e;
+display: flex;
+flex-direction: column;
+align-items: center;
+float:left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar-item {
+width: 90%;
+height: 30px;
+margin: 5px 0;
+display: flex;
+font-size: 0.8em;
+align-items: center;
+justify-content: flex-start;
+font-family: Arial, sans-serif;
+font-size: 14px;
+color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar-item:hover {
+background-color: rgb(119, 119, 190);
+cursor: pointer;
+}
+
+.sidebar-item i {
+margin-right: 40px;
+}
+
+.user-name {
+font-size: 18px;
+font-weight: bold;
+}
+
+.visit-store {
+font-size: 12px;
+color: #ccc;
+text-align: center;
+}
+
+.credits {
+width: 100%;
+height: 50px;
+margin-top: auto;
+background-color: #2c4785;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: Arial, sans-serif;
+font-size: 14px;
+color: #fff;
+}
+
+.main {
+  width: 80%;
+  height: 100vh;
+  overflow-y: auto;
+  margin-left: 100px;
+  flex-direction: row;
+}
+
+.main-header {
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid #ddd;
+}
+
+.main-header input {
+  width: 200px;
+  height: 30px;
+  margin: 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 0 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.main-header input:focus {
+  outline: none;
+  border-color: #999;
+}
+
+.main-content {
+  width: 100%;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.main-content h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.summary-box {
+  width: 30%;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hell{
+  display: flex;
+  flex-direction: row;
+}
+.summary-box h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.summary-box p {
+  font-size: 12px;
+  color: #999;
+}
+
+.transactions-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+.transactions-table th, .transactions-table td {
+  width: 20%;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.transactions-table tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.transactions-table tr:hover {
+  background-color: #e0e0e0;
+}
+
+.status {
+  width: 80%;
+  height: 20px;
+  margin: 10px auto;
+  border-radius: 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 12px;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.processing {
+  background-color: #ffcc00;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.successful {
+  background-color: #66cc66;
+}
+.user-info {
+display: flex;
+align-items: center;
+}   
+.user-image {
+  max-width: 20%; 
+  display:block;
+  height: auto; 
+  margin-top: 15px;
+  margin-right: 5px;
+  border-radius: 10%;
+}
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 50px;
+background-color: #f4f1ee;
+}
+
+nav ul {
+list-style-type: none;
+}
+
+nav li {
+display: inline;
+margin-right: 20px; 
+}
+
+nav a {
+color: rgb(21, 20, 20);
+text-decoration: none;
+}
+
+.search-bar input[type=text] {
+padding: 5px;
+border-radius: 10px;
+width: 200px;
+border-color: #ccc;
+}
+.test{
+border-radius: 10px;
+border-color:#ddd;
+}
+.icons {
+display: flex;
+flex-direction: row;
+height: 30px;
+/* Style as per your requirement */
+}
+.icon1{
+border-radius: 50%;
 }
